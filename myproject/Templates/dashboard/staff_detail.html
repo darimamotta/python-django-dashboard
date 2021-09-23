@@ -20,51 +20,65 @@
   </head>
   <body>
    {% extends 'partials/base.html' %}
-   {% block title %} Staff Page {% endblock %}
+   {% block title %} Detail Staff Page {% endblock %}
        {% block content %}
      <!--Table-->
+  <!--Table-->
   <div class="container">
     <div class="row my-4">
       <div class="col-md-4">
+
       </div>
       <div class="col-md-8">
-       <table class="table bg-white">
-  <thead class="bg-info text-white">
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
-    </tr>
-  </thead>
+        <div class="card">
+          <div class="card-header bg-info text-white">
+            Profile Page
+          </div>
+          <div class="card-body">
+            <div class="row">
+              <div class="col-md-8">
+                <span class="h4">Staff Profile Information</span><a class="btn btn-info btn-sm float-right" href="">Edit</a>
+                <hr>
+                         <table class="table bg-white table-borderless">
+
+
+
   <tbody>
     <tr>
-      <th scope="row"><a class="btn btn-info btn-sm" href="">View</a></th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
+      <th scope="row">Name</th>
+      <td>Mark Ritzinger</td>
+
     </tr>
     <tr>
-      <th scope="row"><a class="btn btn-info btn-sm" href="">View</a></th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
+      <th scope="row">Email</th>
+      <td>mark123@gmail.com</td>
+
     </tr>
     <tr>
-      <th scope="row"><a class="btn btn-info btn-sm" href="">View</a></th>
-      <td>Larry</td>
-      <td>the Bird</td>
-      <td>@twitter</td>
+      <th scope="row">Phone</th>
+      <td>4915210133230</td>
+    </tr>
+      <tr>
+      <th scope="row">Address</th>
+      <td>Offenburg, Hauptstraße 6</td>
     </tr>
   </tbody>
 </table>
+              </div>
+              <div class="col-md-4">
+  <img class="img-thumbnail" src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="">
+</div>
+            </div>
+
+          </div>
+        </div>
+
       </div>
       </div>
-
-
 
 
     </div>
+  <!---end of Table-->
   <!---end of Table-->
      {% endblock %}
   <!--navbar!-->

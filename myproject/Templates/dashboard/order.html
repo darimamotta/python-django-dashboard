@@ -20,7 +20,6 @@
   </head>
   <body>
    {% extends 'partials/base.html' %}
-
    {% block title %} Order Page {% endblock %}
        {% block content %}
      <!--Table-->
@@ -38,33 +37,22 @@
       <th scope="col">Category</th>
       <th scope="col">Quantity</th>
       <th scope="col">Order by</th>
+      <th scope="col">Date</th>
     </tr>
   </thead>
   <tbody>
+    {% for orders in orders %}
     <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-      <td>Broni
-      </td>
+      <th scope="row"></th>
+      <td>{{ orders.product }}</td>
+      <td>{{ orders.product.category }}</td>
+      <td>{{ orders.order_quantity }}</td>
+      <td>{{orders.staff.username}}</td>
+      <td>{{orders.date}}</td>
     </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-        <td>Hubert
-      </td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Larry</td>
-      <td>the Bird</td>
-      <td>@twitter</td>
-        <td>Lena
-      </td>
-    </tr>
+
+  {% endfor %}
+
   </tbody>
 </table>
       </div>
@@ -179,14 +167,14 @@
     </tr>
   </thead>
   <tbody>
+  {% for orders in orders %}
     <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-      <td>Broni
-      </td>
+      <th scope="row">{{ orders.product }}</th>
+      <td>{{ orders.product.category }}</td>
+      <td>{{ orders.quantity }}</td>
+
     </tr>
+  {% endfor %}
     <tr>
       <th scope="row">2</th>
       <td>Jacob</td>
