@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
 <!--fontsawesome--->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
@@ -24,7 +25,9 @@
 
 
    {% block content %}
+
     <!--Graphs-->
+
   <div class="container">
     <div class="row my-5">
       <div class="col-md-6">
@@ -112,10 +115,12 @@ var myChart2 = new Chart(ctx, {
             </div>
 
              </div>
-        <div class="col-md-6 ">
+
+            <div class="row my-5">
+        <div class="col-md-6">
 <div class="row my-4">
 <div class="bg-white">
-<canvas id="myChart3" width="550" height="550"></canvas>
+<canvas id="myChart3" width="500" height="550"></canvas>
 <script>
 var ctx = document.getElementById('myChart3').getContext('2d');
 var myChart = new Chart(ctx, {
@@ -155,17 +160,19 @@ var myChart = new Chart(ctx, {
 </script>
  </div>
 </div></div>
+        <div class="col-md-6">
+<div class="row my-4">
 <div class="bg-white">
-<canvas id="myChart4" width="550" height="260"></canvas>
+<canvas id="myChart4" width="500" height="300"></canvas>
 <script>
 var ctx = document.getElementById('myChart4').getContext('2d');
 var myChart = new Chart(ctx, {
     type: 'polarArea',
     data: {
-        labels: ['Berlin', 'Baden-Württemberg ', 'Bayern', 'Brandenburg', 'Niedersachsen', 'Hamburg'],
+        labels: ['Berlin', 'Baden-Würtemberg ', 'Bayern', 'Brandenburg', 'Niedersachsen', 'Hamburg'],
         datasets: [{
             label: '# of City',
-            data: [12, 17, 13, 15, 2, 1],
+            data: [12, 16, 13, 15, 2, 1],
             backgroundColor: [
                 'rgba(255, 99, 132, 1)',
                 'rgba(54, 162, 235, 1)',
@@ -195,12 +202,29 @@ var myChart = new Chart(ctx, {
 });
 </script>
 </div>
-
-    </div></div>
-      </div>
+</div></div></div>
+  </div>
+  </div>
+  </div>
+</div>
+  <div class="container">  <div class="slideContainer1">
+   <h4><label for="customRange1" class="form-label">Power Range </label></h4>
+<input type="range" min="1" max="100" value="1" class="form-range%" id="customRange1">
+  </div>
+      <div class="slideContainer2">
+   <h4><label for="customRange2" class="form-label">Capacity </label></h4>
+<input type="range" min="1" max="100" value="1" class="form-range%" id="customRange2">
+  </div>
+        <div class="slideContainer3><br>
+    <label for="customRange3" class="form-label">  <h4>Energy </h4></label>
+<input type="range" min="1" max="100" value="1" class="form-range%" id="customRange3">
+  </div>
   </div>
 
 {% endblock %}
+
+
+
 
   <!---end of Graphs-->
     <!-- Optional JavaScript; choose one of the two! -->
