@@ -33,20 +33,30 @@ CELERY_TASK_TRACK_STARTED = True
 CELERY_TASK_TIME_LIMIT = 30 * 60
 CELERY_BROKER_URL = 'redis://localhost:6379/0'
 #CELERY_RESULT_BACKEND = 'redis://localhost:6379/0'
-CELERY_BROKER_URL = 'redis://localhost:6379/0'
+#CELERY_BROKER_URL = 'redis://localhost:6379/0'
 #CELERY_RESULT_BACKEND = 'redis://redis:6379/0'
-CELERY_RESULT_BACKEND = 'django-db'
-#CELERY_RESULT_BACKEND = 'django-cache'
+#CELERY_RESULT_BACKEND = 'django-db'
+CELERY_RESULT_BACKEND = 'db+sqlite:///celery.sqlite'
+result_backend = 'db+sqlite:///results.sqlite'
+CORS_ALLOW_ALL_ORIGINS = True
+CELERY_BROKER_BACKEND = "db+sqlite:///celery.sqlite"
+CELERY_CACHE_BACKEND = "db+sqlite:///celery.sqlite"
+CELERY_RESULT_BACKEND = "db+sqlite:///celery.sqlite"
+#result_backend = 'db+sqlite:///results.sqlite'
+#CELERY_BROKER_URL = env('CELERY_BROKER_URL', default='amqp://guest:guest@localhost:5672//')
+#CELERY_RESULT_BACKEND = 'django-db+sqlite:///results.sqlite'
 
 
 # celery setting.
-CELERY_CACHE_BACKEND = 'default'
+CELERY_CACHE_BACKEND = 'django-cache'
 
 # django setting.
+
 CACHES = {
     'default': {
-        'BACKEND': 'django.core.cache.backends.db.DatabaseCache',
-        'LOCATION': 'my_cache_table',
+        'BACKEND': 'django.core.cache.backends.filebased.FileBasedCache',
+        'LOCATION': BASE_DIR / 'myproject_cache',
+
     }
 }
 # Application definition
@@ -63,6 +73,8 @@ INSTALLED_APPS = [
     'django_celery_beat',
     'django_celery_results',
     'apptask',
+    'rest_framework',
+    'corsheaders',
 
 
 ]
@@ -75,6 +87,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
 ]
 
 ROOT_URLCONF = 'myproject.urls'
